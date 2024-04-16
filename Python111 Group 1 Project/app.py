@@ -1,28 +1,4 @@
-# from flask import Flask, render_template
-# import pandas as pd
 
-# app = Flask(__name__)
-
-# @app.route("/")
-# def index():
-#     return render_template("index.html")
-
-# @app.route("/about")
-# def about():
-#     return render_template("aboutus.html")
-
-# @app.route("/data")
-# def data():
-#     # Read the CSV file into a DataFrame
-#     df = pd.read_csv("onlinefoods.csv")
-
-#     # Convert DataFrame to list of dictionaries
-#     data = df.to_dict(orient="records")
-
-#     return render_template("data_details.html", data=data)
-
-# if __name__ == "__main__":
-#     app.run(debug=True)
 from flask import Flask, render_template
 import pandas as pd
 import sqlite3
