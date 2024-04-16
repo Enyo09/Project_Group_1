@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Data Table</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+</head>
+<body>
+    <h1>Interactive Data Table</h1>
+    <table id="data-table" class="display">
+        <thead>
+            <tr>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Marital Status</th>
+                <th>Occupation</th>
+                <th>Monthly Income</th>
+                <th>Educational Qualifications</th>
+                <th>Family Size</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Pin Code</th>
+                <th>Output</th>
+                <th>Feedback</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data rows will be populated dynamically -->
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#data-table').DataTable({
+                data: {{ data | tojson }},
+                columns: [
+                    { data: 'Age' },
+                    { data: 'Gender' },
+                    { data: 'Marital Status' },
+                    { data: 'Occupation' },
+                    { data: 'Monthly Income' },
+                    { data: 'Educational Qualifications' },
+                    { data: 'Family size' },
+                    { data: 'latitude' },
+                    { data: 'longitude' },
+                    { data: 'Pin code' },
+                    { data: 'Output' },
+                    { data: 'Feedback' }
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
